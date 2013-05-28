@@ -7,7 +7,7 @@ public:
 
 public:
 	void makeMinHeap();
-	void minHeapFixDown(int i);
+	void minHeapFixDown(int i, int n);
 	void minHeapAddNumber(int num);
 	void minHeapDelNumber();
 	void minHeapShow();

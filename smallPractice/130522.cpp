@@ -77,7 +77,10 @@ void main()
 	int a[] = {3,30,52,14,9,46,29,68,7};
 	int n = 9;
 	MinHeap heap(a,n);
-	//heap.makeMinHeap();
+	heap.makeMinHeap();
+	heap.minHeapAddNumber(8);
+	heap.minHeapShow();
+	heap.minHeapDelNumber();
 	heap.minHeapShow();
 }
 
