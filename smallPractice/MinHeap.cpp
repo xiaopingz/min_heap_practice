@@ -16,6 +16,7 @@ MinHeap::MinHeap(int a[], int n)
 
 MinHeap::~MinHeap(void)
 {
+	delete[] mem_iArray;
 }
 
 void MinHeap::makeMinHeap()
