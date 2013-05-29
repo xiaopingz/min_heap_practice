@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 class MinHeap
 {
 public:
@@ -13,7 +15,8 @@ public:
 	void minHeapShow();
 
 protected:
-	int *	mem_iArray;
-	int		mem_iLength;
+	//注意命名习惯
+	std::unique_ptr<int[]> m_pArray;  //使用智能指针，其实这里用vector会更好
+	int		m_iLength;
 };
 

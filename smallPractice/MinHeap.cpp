@@ -1,84 +1,80 @@
 #include "MinHeap.h"
 #include<iostream>
-
+#include<cstdlib>
 
 MinHeap::MinHeap(int a[], int n)
+	: m_pArray(new int[n])  //构造函数中对成员变量的初始化的写法
+	, m_iLength(n)
 {
-	mem_iLength = n;
-	mem_iArray = new int[n];
-	for(int i=0; i<n; i++)
-	{
-		mem_iArray[i] = a[i];
-	}
-	//makeMinHeap();
+	std::memcpy(m_pArray.get(), a, sizeof(int) * n); //使用内存拷贝会更直观
 }
 
 
 MinHeap::~MinHeap(void)
-{
-	delete[] mem_iArray;
+{//智能指针会自动析构
 }
 
 void MinHeap::makeMinHeap()
 {
-	for(int i=mem_iLength/2 - 1;i>=0; --i)
+	for(int i=m_iLength/2 - 1;i>=0; --i)
 	{
-		minHeapFixDown(i,mem_iLength);
+		minHeapFixDown(i,m_iLength);
 	}
 }
 
+//下面写得不错哦
 void MinHeap::minHeapAddNumber(int num)
 {
-	int i = mem_iLength ;
-	++mem_iLength;
-	mem_iArray[i] = num;
+	int i = m_iLength ;
+	++m_iLength;
+	m_pArray[i] = num;
 	int j,temp;
 	j = (i-1)/2;
-	temp = mem_iArray[i];
+	temp = m_pArray[i];
 	while( j>=0 && i!=0 )
 	{
-		if( mem_iArray[j]<temp )break;
-		mem_iArray[i] = mem_iArray[j];
+		if( m_pArray[j]<temp )break;
+		m_pArray[i] = m_pArray[j];
 		i = j;
 		j = (i-1)/2;
 	}
-	mem_iArray[i] = temp;
+	m_pArray[i] = temp;
 }
 
 void MinHeap::minHeapDelNumber()
 {
-	int temp = mem_iArray[0];
-	mem_iArray[0] = mem_iArray[mem_iLength-1];
-	mem_iArray[mem_iLength-1] = temp;
-	mem_iLength--;
-	minHeapFixDown(0,mem_iLength);
+	int temp = m_pArray[0];
+	m_pArray[0] = m_pArray[m_iLength-1];
+	m_pArray[m_iLength-1] = temp;
+	m_iLength--;
+	minHeapFixDown(0,m_iLength);
 	
 }
 
 void MinHeap::minHeapFixDown(int i, int n)
 {
 	int j,temp;
-	temp = mem_iArray[i];
+	temp = m_pArray[i];
 	j = 2*i + 1;
-	while( j<mem_iLength )
+	while( j<m_iLength )
 	{
 		//if( temp <=( mem_iArray[j]-mem_iArray[j+1]>0?mem_iArray[j+1]:mem_iArray[j]) )break;//如果此处这样比较的话，后面就难以确定是j+1大还是j大，为了确定j，用下面的比较方法
-		if( j+1<mem_iLength && mem_iArray[j+1]<mem_iArray[j] )
+		if( j+1<m_iLength && m_pArray[j+1]<m_pArray[j] )
 			j++;
-		if( temp<=mem_iArray[j] )
+		if( temp<=m_pArray[j] )
 			break;
-		mem_iArray[i] = mem_iArray[j];
+		m_pArray[i] = m_pArray[j];
 		i = j;
 		j = 2*i + 1;
 	}
-	mem_iArray[i] = temp;
+	m_pArray[i] = temp;
 } 
 
 void MinHeap::minHeapShow()
 {
 	std::cout<<std::endl;
-	for( int i=0;i<mem_iLength;++i)
+	for( int i=0;i<m_iLength;++i)
 	{
-		std::cout<<mem_iArray[i]<<" ";
+		std::cout<<m_pArray[i]<<" ";
 	}
 }
