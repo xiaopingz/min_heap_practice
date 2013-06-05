@@ -70,6 +70,8 @@ void main()
 }
 */
 
+#if 0
+
 #include "MinHeap.h"
 
 void main()
@@ -84,3 +86,4 @@ void main()
 	heap.minHeapShow();
 }
 
+#endif
