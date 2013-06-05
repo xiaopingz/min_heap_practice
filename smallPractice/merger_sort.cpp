@@ -13,6 +13,7 @@ void mergeArray(int a[],int first,int middle,int last,int temp[])
 			temp[k++] = a[i++];
 		else 
 			temp[k++] = a[j++];
+			//count += middle-i+1;//求数列中的逆序对个数
 	}
 	while( j<=last )
 			temp[k++] = a[j++];

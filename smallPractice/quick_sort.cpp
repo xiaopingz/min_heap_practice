@@ -1,6 +1,6 @@
 /* quick sort algorithms impl8y
 	zhou xiaoping 2013-06-05 */
-
+#if 0
 #include<time.h>
 #include<stdlib.h>
 #include<iostream>
@@ -44,3 +44,4 @@ int main(){
 
 }
 
+#endif
