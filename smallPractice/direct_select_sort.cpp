@@ -1,15 +1,7 @@
 /* direct selected sort algorithm imply
 	zhou xiaoping 2013-0605 */
 
-inline void swap(int &a, int &b)
-{
-	if(a!=b)
-	{
-		a^=b;
-		b^=a;
-		a^=b;
-	}
-}
+#include"head_info.h"
 
 void select_sort( int a[], int n ) 
 {

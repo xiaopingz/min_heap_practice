@@ -1,9 +1,10 @@
 #include "MinHeap.h"
 #include<iostream>
 #include<cstdlib>
+#define MAX	50
 
 MinHeap::MinHeap(int a[], int n)
-	: m_pArray(new int[n])  //构造函数中对成员变量的初始化的写法
+	: m_pArray(new int[MAX])  //构造函数中对成员变量的初始化的写法
 	, m_iLength(n)
 {
 	std::memcpy(m_pArray.get(), a, sizeof(int) * n); //使用内存拷贝会更直观
