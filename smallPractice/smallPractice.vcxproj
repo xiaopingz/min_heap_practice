@@ -77,9 +77,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="130522.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="bubble_sort.cpp" />
+    <ClCompile Include="demo_to_detect.cpp" />
+    <ClCompile Include="direct_select_sort.cpp" />
+    <ClCompile Include="fibonacci.cpp" />
+    <ClCompile Include="head_impliment.cpp" />
+    <ClCompile Include="merger_sort.cpp" />
     <ClCompile Include="MinHeap.cpp" />
+    <ClCompile Include="quick_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="head_info.h" />
     <ClInclude Include="MinHeap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
