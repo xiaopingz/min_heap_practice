@@ -2,6 +2,8 @@
 	zhou xiaoping 2013-06-05 */
 
 #include<stdlib.h>
+#include<stack>   //2013-10-03
+#include"head_info.h"
 
 void mergeArray(int a[],int first,int middle,int last,int temp[])
 {
@@ -34,12 +36,48 @@ void mergerSort( int a[], int first,int last, int temp[] )
 	}
 }
 
+void mergeSort( int a[], int first, int last , int temp[] )
+{
+	// unrecursive solution
+	std::stack<int>	st, stx;
+	st.push(first);
+	st.push(last);
+	while( !st.empty() )
+	{
+		int l = st.top();
+		st.pop();
+		stx.push(l);
+		int f = st.top();
+		st.pop();
+		stx.push(f);
+		int mid = (l+f)/2;
+		if( f<mid )
+		{
+			st.push(f);
+			st.push(mid);
+		}
+		if( mid+1<l )
+		{
+			st.push(mid+1);
+			st.push(l);
+		}
+	}
+	while( !stx.empty() )
+	{
+		int f = stx.top();
+		stx.pop();
+		int l = stx.top();
+		stx.pop();
+		mergeArray(a,f,(f+l)/2,l,temp);
+	}
+}
+
 bool merger_sort( int a[], int n )//n为数组元素个数
 {
 	int *p = new int[n];
 	if( p==NULL )
 		return false;
-	mergerSort(a,0,n-1,p);
+	mergeSort(a,0,n-1,p);
 	delete[] p;
 	return true;
 }

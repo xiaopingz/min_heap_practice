@@ -1,39 +1,37 @@
 
+
 #include"head_info.h"
+
 #include<time.h>
 #include<stdlib.h>
 #include<iostream>
-#define MAX 10
-
+#define MAX 20
+#if 0
 
 int main(){
 	//排序算法
-	//int s[MAX],i;
-	//srand((unsigned)time(0));
-	//for ( i=0;i<MAX;i++ )
-	//	s[i] = rand()%100;
-	//for( i=0;i<MAX;i++ )
-	//	std::cout<<s[i]<<" ";
-	////bubble_sort1( s,MAX );
+	int s[MAX],i;
+	srand((unsigned)time(0));
+	for ( i=0;i<MAX;i++ )
+		s[i] = rand()%100;
+	showArray(s,MAX);
+	merger_sort(s,MAX);
 	//quick_sort_norecursion(s,0,MAX-1);
-	//std::cout<<std::endl;
-	//for( i=0;i<MAX;i++ )
-	//	std::cout<<s[i]<<" ";
+	showArray(s,MAX);
 
 	//fibonacci递归和非递归
 	//std::cout<<"\n"<<fibonacci(15)<<" || "<<fibonacci_norecursion(15)<<std::endl;
 
-	int s[] = {5,24,8,4,91,6,64,29,43,10};
-	BinaryTree mytree(s,MAX);
-	//mytree.preOrder(mytree.getRoot());
-	std::cout<<std::endl;
-	//mytree.midOrder(mytree.getRoot());
-	mytree.postOrder_unrecursive(mytree.getRoot());
-	std::cout<<std::endl;
-	mytree.postOrder(mytree.getRoot());
+	//int s[] = {5,24,8,4,91,6,64,29,43,10};
+	//BinaryTree mytree(s,MAX);
+	////mytree.preOrder(mytree.getRoot());
+	//std::cout<<std::endl;
+	////mytree.midOrder(mytree.getRoot());
+	//mytree.postOrder_unrecursive(mytree.getRoot());
+	//std::cout<<std::endl;
+	//mytree.postOrder(mytree.getRoot());
 }
 
-#if 0
 //重新自己写一遍！！
 #include <map>
 #include <functional>
@@ -94,3 +92,10 @@ void main(){
 }
 
 #endif
+
+void main()
+{
+	char s[] = "abcdef";
+	reverse_string(s,6);
+	std::cout<<s<<std::endl;
+}
