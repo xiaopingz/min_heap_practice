@@ -32,3 +32,8 @@ void swap(T &a,T &b)
 };
 
 void reverse_string( char * a, int len);
+
+void direct_insert_sort(int a[], int len);
+void direct_insert_sort2(int a[], int len);
+
+void shell_sort(int a[], int len);

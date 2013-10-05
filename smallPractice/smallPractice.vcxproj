@@ -80,12 +80,14 @@
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="bubble_sort.cpp" />
     <ClCompile Include="demo_to_detect.cpp" />
+    <ClCompile Include="direct_insert_sort.cpp" />
     <ClCompile Include="direct_select_sort.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="head_impliment.cpp" />
     <ClCompile Include="merger_sort.cpp" />
     <ClCompile Include="MinHeap.cpp" />
     <ClCompile Include="quick_sort.cpp" />
+    <ClCompile Include="shell_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />

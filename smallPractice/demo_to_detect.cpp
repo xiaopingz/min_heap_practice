@@ -5,8 +5,8 @@
 #include<time.h>
 #include<stdlib.h>
 #include<iostream>
-#define MAX 20
-#if 0
+#define MAX 24
+
 
 int main(){
 	//排序算法
@@ -15,7 +15,7 @@ int main(){
 	for ( i=0;i<MAX;i++ )
 		s[i] = rand()%100;
 	showArray(s,MAX);
-	merger_sort(s,MAX);
+	shell_sort(s,MAX);
 	//quick_sort_norecursion(s,0,MAX-1);
 	showArray(s,MAX);
 
@@ -31,7 +31,7 @@ int main(){
 	//std::cout<<std::endl;
 	//mytree.postOrder(mytree.getRoot());
 }
-
+#if 0
 //重新自己写一遍！！
 #include <map>
 #include <functional>
@@ -91,7 +91,6 @@ void main(){
 	std::cout<<sizeof(str)<<" "<<sizeof(a)<<std::endl;
 }
 
-#endif
 
 void main()
 {
@@ -99,3 +98,5 @@ void main()
 	reverse_string(s,6);
 	std::cout<<s<<std::endl;
 }
+
+#endif
