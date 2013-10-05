@@ -1,8 +1,6 @@
 #pragma once
 #include"BinaryTree.h"
 
-//void swap(int &a, int &b);
-
 void bubble_sort1(int a[],int n);
 
 void bubble_sort2(int a[],int n);
@@ -21,7 +19,7 @@ bool merger_sort( int a[], int n );
 
 void showArray(int a[], int len);
 
-void reverseString(char * a, int len, int s);
+void reverseString(char * a,int index, int len);
 
 template<typename T>
 void swap(T &a,T &b)

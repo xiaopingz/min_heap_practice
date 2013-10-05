@@ -127,24 +127,24 @@ void	BinaryTree::postOrder_unrecursive(treeNode *root)
 		if( cur )
 		{
 			st.push(cur);
-			flagst.push(1);
+			flagst.push(1);	
 			cur = cur->leftChild;
 		}
 		else
 		{
 			cur = st.top();
 			int flag = flagst.top();
+			flagst.pop();
 			if( flag==1 )
 			{
+				//从左子树出
 				cur = cur->rightChild;
-				flagst.pop();
 				flagst.push(2);
 			}
 			else
-			{
+			{	//从右子树出
 				std::cout<<cur->data<<" ";
 				st.pop();
-				flagst.pop();
 				cur = nullptr;
 			}
 		}

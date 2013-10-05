@@ -20,7 +20,7 @@ int main(){
 	showArray(s,MAX);
 
 	//fibonacciµÝ¹éºÍ·ÇµÝ¹é
-	//std::cout<<"\n"<<fibonacci(15)<<" || "<<fibonacci_norecursion(15)<<std::endl;
+	//std::cout<<"\n"<<fibonacci(20)<<" || "<<fibonacci_norecursion(20)<<std::endl;
 
 	//int s[] = {5,24,8,4,91,6,64,29,43,10};
 	//BinaryTree mytree(s,MAX);
