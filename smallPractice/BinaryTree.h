@@ -24,6 +24,8 @@ public:
 	void	midOrder_unrecursive2(treeNode * root);
 	void	postOrder(treeNode *root);
 	void	postOrder_unrecursive(treeNode *root);
+	void	breadthTraversal(treeNode *root);	//不用遍历的方法，应该不需要参数吧？
+	int		getDepth(treeNode *root);
 
 protected:
 	void		addNode(treeNode *pNode);

@@ -1,6 +1,7 @@
 #include "BinaryTree.h"
 #include<iostream>
 #include<stack>
+#include<queue>
 
 BinaryTree::BinaryTree(int *a, int len)
 	: m_pRoot(nullptr)
@@ -149,6 +150,36 @@ void	BinaryTree::postOrder_unrecursive(treeNode *root)
 			}
 		}
 	}
+}
+
+void	BinaryTree::breadthTraversal(treeNode *root)
+{
+	std::queue<treeNode *>  que;
+	treeNode * cur = root;
+	que.push(cur);
+	while( !que.empty() )
+	{
+		cur = que.front();
+		que.pop();
+		std::cout<<cur->data<<" ";
+		if(cur->leftChild)
+			que.push(cur->leftChild);
+		if(cur->rightChild)
+			que.push(cur->rightChild);
+	}
+}
+
+int		BinaryTree::getDepth(treeNode *root)
+{
+	int ld =0, rd =0;
+	if( root->leftChild )
+		ld = getDepth(root->leftChild);
+	if( root->rightChild )
+		rd = getDepth(root->rightChild);
+	if( ld>rd )
+		return ld + 1;
+	else 
+		return rd + 1;
 }
 
 void BinaryTree::addNode(treeNode * p)
