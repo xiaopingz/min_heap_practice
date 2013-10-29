@@ -182,6 +182,52 @@ int		BinaryTree::getDepth(treeNode *root)
 		return rd + 1;
 }
 
+int		BinaryTree::findAndPrintPath(int n)
+{
+	std::stack<int> st;
+	int pathNum = findPath(m_pRoot,n,st);
+	if( pathNum == 0 )
+		std::cout<<"NOT FOUND!"<<std::endl;
+	return pathNum;
+}
+
+int		BinaryTree::findPath(treeNode * root,int n,std::stack<int> &st)
+{
+	 int count = 0;
+	 st.push(root->data);
+	 if( root->data==n )
+	 {
+		 printStack(st);
+		 ++count;
+	 }
+	 if( root->leftChild )
+		 count += findPath(root->leftChild,n,st);
+	 if( root->rightChild )
+		 count += findPath(root->rightChild,n,st);
+	 st.pop();
+	 return count;
+}
+
+void	BinaryTree::printStack(std::stack<int> &st)
+{
+	std::stack<int> stTmp;
+	int tmp;
+	while( !st.empty() )
+	{
+		tmp = st.top();
+		stTmp.push(tmp);
+		st.pop();
+	}
+	while( !stTmp.empty() )
+	{
+		tmp = stTmp.top();
+		std::cout<<tmp<<" ";
+		st.push(tmp);
+		stTmp.pop();
+	}
+	std::cout<<std::endl;
+}
+
 void BinaryTree::addNode(treeNode * p)
 {
 	if( !m_pRoot )

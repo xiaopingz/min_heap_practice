@@ -5,6 +5,7 @@
 #include<time.h>
 #include<stdlib.h>
 #include<iostream>
+#include<bitset>
 #define MAX 10
 
 
@@ -26,13 +27,39 @@ int main(){
 	BinaryTree mytree(s,MAX);
 	//mytree.preOrder(mytree.getRoot());
 	//mytree.midOrder(mytree.getRoot());
-	mytree.postOrder_unrecursive(mytree.getRoot());
+	/*mytree.postOrder_unrecursive(mytree.getRoot());
 	std::cout<<std::endl;
 	mytree.breadthTraversal(mytree.getRoot());
 	std::cout<<std::endl;
-	std::cout<<"tree depth:"<<mytree.getDepth(mytree.getRoot())<<std::endl;
+	std::cout<<"tree depth:"<<mytree.getDepth(mytree.getRoot())<<std::endl;*/
+	std::cout<<mytree.findAndPrintPath(6)<<std::endl;
+
+	/*int a[8] = {0};
+	if( placeQueue(a,0) )
+		showEightQueue(a);*/
+
+
+	/*double a=2.6+3.7, c = 6.3;
+	std::cout<<a<<" "<<c<<std::endl;
+	if( a==c )
+		std::cout<<a<<" "<<c<<" a=c"<<std::endl;
+	float b = pow((float)2,(float)-128);
+	int * p = (int *)(void*)&b;
+	if( *p!=0 )
+		std::cout<<"b is not 0"<<std::endl;
+	std::bitset<32> mybits(*p);
+	std::cout<<mybits<<std::endl;
+
+	if( !(*p & 0x7fffffff) )
+		std::cout<< "b is 0\n";
+	else std::cout<< "b is not 0"<<std::endl;
+
+	float d = 123.456789;
+	std::cout<<d<<std::endl;*/
 }
+
 #if 0
+
 //重新自己写一遍！！
 #include <map>
 #include <functional>

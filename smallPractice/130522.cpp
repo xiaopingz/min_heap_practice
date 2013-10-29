@@ -2,7 +2,7 @@
 http://www.cnblogs.com/fangyukuan/archive/2010/05/30/1747449.html
    2013-05-22 */
 
-/*
+#if 0
 #include <iostream>    
 using namespace std;   
    
@@ -68,9 +68,9 @@ void main()
 	DelPN(a); 
     cin.get();
 }
-*/
 
-#if 0
+
+
 
 #include "MinHeap.h"
 
@@ -84,6 +84,55 @@ void main()
 	heap.minHeapShow();
 	heap.minHeapDelNumber();
 	heap.minHeapShow();
+}
+
+
+
+
+#include<stdio.h>
+
+//int flag = 1;
+//void f();
+//
+//int main(){
+//	if(flag)
+//	{
+//		flag = 0;
+//		f();
+//		return 0;
+//	}
+//	int a;
+//	scanf("%d",&a);
+//	if( a==1 )
+//		return 10;
+//	else
+//		return 20;
+//}
+//
+//void f()
+//{
+//	printf("%d",main());
+//}
+
+#include<string>
+#include<iostream>
+
+int size(char * str)
+{
+	return strlen(str);
+}
+
+int main()
+{
+	/*char c;
+	if( (c=getchar())!=EOF )
+	{
+		main();
+	}
+	printf("%c",c);*/
+	char a[] = "abddofua";
+	std::cout<<size(a)<<" "<<sizeof(a)<<std::endl;
+	return 0;
 }
 
 #endif
